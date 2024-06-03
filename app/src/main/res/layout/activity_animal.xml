@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimalActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/outside_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="@id/outside_container"
+            app:layout_constraintStart_toStartOf="@id/outside_container"
+            app:layout_constraintEnd_toEndOf="@id/outside_container">
+
+<!--            <ListView-->
+<!--                android:id="@+id/animal_lv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toTopOf="@id/container"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"/>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:id="@+id/animal_img_1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/dog"
+                    app:layout_constraintBottom_toTopOf="@id/animal_img_3"
+                    app:layout_constraintEnd_toStartOf="@id/animal_img_2"
+                    app:layout_constraintStart_toStartOf="@id/container_1"
+                    app:layout_constraintTop_toTopOf="@id/container_1" />
+
+                <ImageView
+                    android:id="@+id/animal_img_2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="50dp"
+                    android:contentDescription="@string/elephant"
+                    app:layout_constraintBottom_toBottomOf="@id/animal_img_1"
+                    app:layout_constraintEnd_toEndOf="@id/container_1"
+                    app:layout_constraintStart_toEndOf="@id/animal_img_1"
+                    app:layout_constraintTop_toTopOf="@id/animal_img_1" />
+
+                <EditText
+                    android:id="@+id/animal_et_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/what_animal_is_this"
+                    android:hint="@string/what_animal_is_this"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@id/animal_img_1"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_1"
+                    app:layout_constraintTop_toBottomOf="@id/animal_img_1" />
+
+                <EditText
+                    android:id="@+id/animal_et_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/what_animal_is_this"
+                    android:hint="@string/what_animal_is_this"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@id/animal_img_2"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_2"
+                    app:layout_constraintTop_toBottomOf="@id/animal_img_2" />
+
+                <ImageView
+                    android:id="@+id/animal_img_3"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/fish"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_1"
+                    app:layout_constraintTop_toBottomOf="@id/animal_et_1" />
+
+                <EditText
+                    android:id="@+id/animal_et_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/what_animal_is_this"
+                    android:hint="@string/what_animal_is_this"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@id/animal_img_3"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_3"
+                    app:layout_constraintTop_toBottomOf="@id/animal_img_3" />
+
+                <ImageView
+                    android:id="@+id/animal_img_4"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/fish"
+                    app:layout_constraintBottom_toBottomOf="@id/animal_img_3"
+                    app:layout_constraintEnd_toEndOf="@id/animal_img_2"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_2"
+                    app:layout_constraintTop_toTopOf="@id/animal_img_3" />
+
+                <EditText
+                    android:id="@+id/animal_et_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/what_animal_is_this"
+                    android:hint="@string/what_animal_is_this"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@id/animal_img_4"
+                    app:layout_constraintStart_toStartOf="@id/animal_img_4"
+                    app:layout_constraintTop_toBottomOf="@id/animal_img_4" />
+
+                <Button
+                    android:id="@+id/animal_back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/back"
+                    app:layout_constraintEnd_toStartOf="@id/animal_next_btn"
+                    app:layout_constraintStart_toStartOf="@id/container_1"
+                    app:layout_constraintTop_toBottomOf="@id/animal_et_3" />
+
+                <Button
+                    android:id="@+id/animal_next_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next"
+                    app:layout_constraintBottom_toBottomOf="@id/animal_back_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/animal_back_btn"
+                    app:layout_constraintTop_toTopOf="@id/animal_back_btn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="start">
+
+        <include
+            layout="@layout/nav_drawer"/>
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

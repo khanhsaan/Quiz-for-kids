@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartoonResultActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/outside_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="@id/outside_container"
+            app:layout_constraintStart_toStartOf="@id/outside_container"
+            app:layout_constraintEnd_toEndOf="@id/outside_container">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/animalResult_username_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/container_1"
+                    app:layout_constraintStart_toStartOf="@id/container_1"
+                    android:text="Well done username"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/lavender"
+                    android:textSize="30sp"/>
+                <!--                    android:layout_marginStart="30dp"/>-->
+
+
+                <TextView
+                    android:id="@+id/animalResult_result_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You have finished the “Animals” quiz"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/lavender"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/animalResult_username_tv"
+                    app:layout_constraintStart_toStartOf="@id/animalResult_username_tv" />
+
+                <TextView
+                    android:id="@+id/animalResult_point_tv"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/animalResult_result_tv_2"
+                    app:layout_constraintStart_toStartOf="@id/animalResult_result_tv_2"
+                    android:text="with 2 correct and 2 incorrect answers or 4 points for this attempt"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/animalResult_overallPoint_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/animalResult_point_tv"
+                    app:layout_constraintStart_toStartOf="@id/animalResult_point_tv"
+                    android:text="Overall you have 32 points."
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/lavender"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:id="@+id/animal_back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/animalResult_overallPoint_tv"
+                    app:layout_constraintStart_toStartOf="@id/container_1"
+                    app:layout_constraintEnd_toStartOf="@id/animal_next_btn"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/try_again"/>
+
+                <Button
+                    android:id="@+id/animal_next_btn"
+                    android:text="@string/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/animal_back_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/animal_back_btn"
+                    app:layout_constraintBottom_toBottomOf="@id/animal_back_btn"
+                    android:layout_marginStart="50dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="start">
+
+        <include
+            layout="@layout/nav_drawer"/>
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
